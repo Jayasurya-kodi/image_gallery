@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+p{font-family: cursive; color: white;}
+body{ background-image: url("ig1.jpg"); background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;}
+  h3,h4{font-family: cursive; color: white;}
+.card{
+   background-image: url(ig1.jpg); width: 350px; margin-left: 550px;
+}
+#myImg{
+  margin-left: 570px;
+}
+
+</style>
+</head>
+<body>
+  <h3>IMAGE-GALLERY</h3><h4>{ by JAYASURYA.K }</h4> 
+  <hr color="white" height="7px">
+<img id="myImg" onclick="show('myImg')" class="y" src="surya.png" alt="Snow" style="width:100%;max-width:300px">
+<div class="card">  
+  <div class="card-body">
+
+    <p>brightness: <input oninput="func(this.value)" type="range" min="0" max="200"  step="0.1" class="slider" id="myRange1"><span id="demo1"></span>
+    <p>contrast:  <input oninput="func1(this.value)" type="range" min="0" max="200"  step="0.1" class="slider1" id="myRange2"><span id="demo2"></span>
+    <p>blur: <input oninput="func2(this.value)" type="range" min="0" max="10"  step="0.1" class="slider2" id="myRange3"><span id="demo3"></span></p><br>
+    <p>opacity: <input oninput="func3(this.value)" type="range" min="0" max="1"  step="0.1" class="slider3" id="myRange4"><span id="demo4"></span>
+    <p>saturation: <input oninput="func4(this.value)" type="range" min="0" max="100"  step="0.1" class="slider4" id="myRange5"><span id="demo5"></span>
+    <p>invert: <input oninput="func5(this.value)" type="range" min="0" max="100"  step="0.1" class="slider5" id="myRange6"><span id="demo6"></span></p><br>
+    <p>sepia: <input oninput="func6(this.value)" type="range" min="0" max="100"  step="0.1" class="slider6" id="myRange7"><span id="demo7"></span></p>
+    <p>graycale: <input oninput="func7(this.value)" type="range" min="0" max="100"  step="0.1" class="slider7" id="myRange8"><span id="demo8"></span></p>
+</div>
+  </div>
+</div>
+
+<script>
+var slider = document.getElementById("myRange1");
+var slider1 = document.getElementById("myRange2");
+var slider2 = document.getElementById("myRange3");
+var slider3 = document.getElementById("myRange4");
+var slider4 = document.getElementById("myRange5");
+var slider5 = document.getElementById("myRange6");
+var slider6 = document.getElementById("myRange7");
+var slider7 = document.getElementById("myRange8");
+var output = document.getElementById("demo1");
+var output1 = document.getElementById("demo2");
+var output2 = document.getElementById("demo3");
+var output3 = document.getElementById("demo4");
+var output4 = document.getElementById("demo5");
+var output5 = document.getElementById("demo6");
+var output6 = document.getElementById("demo7");
+var output7 = document.getElementById("demo8");
+var img =document.getElementById("myImg");
+
+function func(a) {
+  output.innerHTML=a;
+  img.style.filter= `brightness(${slider.value}%)`;
+}
+function func1(a) {
+  output1.innerHTML=a;
+  img.style.filter= `contrast(${slider1.value}%)`;
+}
+function func2(a) {
+  output2.innerHTML=a;
+  img.style.filter= `blur(${slider2.value}px)`;
+}
+function func3(a) {
+  output3.innerHTML=a;
+  img.style.opacity= a;
+}
+function func4(a) {
+  output4.innerHTML=a;
+  img.style.filter= `saturate(${slider4.value}%)`;
+}
+function func5(a) {
+  output5.innerHTML=a;
+  document.getElementById('myImg').style.filter= `invert(${slider5.value}%)`;
+}
+function func6(a) {
+  output6.innerHTML=a;
+  document.getElementById('myImg').style.filter= `sepia(${slider6.value}%)`;
+}
+function func7(a) {
+  output7.innerHTML=a;
+  document.getElementById('myImg').style.filter= `grayscale(${slider7.value}%)`;
+}
+</script>
+
+</body>
+</html>
